@@ -4,298 +4,255 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PurpleTec — Cybersecurity & Managed Hosting</title>
-  <meta name="description" content="PurpleTec bietet Cybersecurity Audits, Penetration Testing, Managed Hosting und Incident Response. B2B IT-Sicherheit aus Deutschland.">
-  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+  <meta name="description" content="IT-Sicherheit und Hosting für Unternehmen. Security Audits, Penetration Testing, Incident Response und sicheres Managed Hosting.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --bg: #fafafa;
+      --text: #111;
+      --muted: #666;
+      --subtle: #999;
+      --border: #e5e5e5;
+      --purple: #7c3aed;
+      --purple-soft: #f3f0ff;
+      --card-bg: #fff;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- NAV ---- */
+    nav {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo img { height: 28px; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-contact {
+      color: var(--purple) !important;
+      font-weight: 500;
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 80px 24px 60px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    /* ---- SPLIT CARDS ---- */
+    .split {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .split-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 48px 36px;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .split-card:hover {
+      border-color: var(--purple);
+      box-shadow: 0 4px 24px rgba(124, 58, 237, 0.06);
+    }
+    .split-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--purple);
+      margin-bottom: 20px;
+    }
+    .split-card h2 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .split-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .split-list {
+      list-style: none;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .split-list li {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .split-list li::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: var(--purple);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .split-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 24px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--purple);
+    }
+    .split-cta svg {
+      transition: transform 0.2s;
+    }
+    .split-card:hover .split-cta svg {
+      transform: translateX(4px);
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer p {
+      font-size: 12px;
+      color: var(--subtle);
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a {
+      font-size: 12px;
+      color: var(--subtle);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--text); }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero { padding: 48px 24px 40px; }
+      .hero h1 { font-size: 24px; }
+      .split { grid-template-columns: 1fr; padding-bottom: 48px; }
+      .split-card { padding: 32px 24px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
 </head>
 <body>
-  <!-- NAV -->
-  <nav id="nav">
+
+  <nav>
     <div class="nav-inner">
       <a href="/" class="nav-logo">
-        <img src="/assets/purpletec-logo.jpg" alt="PurpleTec" height="32">
+        <img src="/assets/purpletec-logo.jpg" alt="PurpleTec">
       </a>
       <div class="nav-links">
-        <a href="#security">Cybersecurity</a>
-        <a href="#hosting">Managed Hosting</a>
-        <a href="#about">Über uns</a>
-        <a href="#contact" class="nav-cta">Kontakt</a>
+        <a href="/security">Security</a>
+        <a href="/hosting">Hosting</a>
+        <a href="#contact" class="nav-contact">Kontakt</a>
       </div>
-      <button class="nav-burger" id="burger" aria-label="Menü">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </nav>
 
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#security" onclick="closeMenu()">Cybersecurity</a>
-    <a href="#hosting" onclick="closeMenu()">Managed Hosting</a>
-    <a href="#about" onclick="closeMenu()">Über uns</a>
-    <a href="#contact" onclick="closeMenu()">Kontakt</a>
+  <section class="hero">
+    <h1>IT-Sicherheit und Hosting.<br>Aus einer Hand.</h1>
+    <p>Wir prüfen Ihre Systeme, betreiben Ihre Infrastruktur und reagieren, wenn es drauf ankommt.</p>
+  </section>
+
+  <div class="split">
+    <a href="/security" class="split-card">
+      <div class="split-label">Cybersecurity</div>
+      <h2>Ihre Sicherheit prüfen.</h2>
+      <p>Wir finden Schwachstellen, bevor es andere tun. Systematisch, dokumentiert und vertraulich.</p>
+      <ul class="split-list">
+        <li>Security Audits</li>
+        <li>Penetration Testing</li>
+        <li>Incident Response</li>
+        <li>Code Review</li>
+      </ul>
+      <span class="split-cta">Mehr erfahren <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+
+    <a href="/hosting" class="split-card">
+      <div class="split-label">Managed Hosting</div>
+      <h2>Ihre Infrastruktur betreiben.</h2>
+      <p>Server, Datenbanken und Websites. Professionell gehostet, gewartet und geschützt.</p>
+      <ul class="split-list">
+        <li>Server & Datenbanken</li>
+        <li>Webdesign & Entwicklung</li>
+        <li>Monitoring & Support</li>
+        <li>DSGVO-konformes Hosting</li>
+      </ul>
+      <span class="split-cta">Mehr erfahren <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
   </div>
 
-  <!-- HERO — Split Choice -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <h1 class="hero-title">IT-Sicherheit.<br>Ohne Kompromisse.</h1>
-      <p class="hero-sub">Cybersecurity Audits & Managed Hosting für Unternehmen, die es ernst meinen.</p>
-      <div class="hero-split">
-        <a href="#security" class="split-card split-security">
-          <div class="split-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <path d="M9 12l2 2 4-4"/>
-            </svg>
-          </div>
-          <h2>Cybersecurity</h2>
-          <p>Penetration Testing, Security Audits & Incident Response</p>
-          <span class="split-arrow">&rarr;</span>
-        </a>
-        <a href="#hosting" class="split-card split-hosting">
-          <div class="split-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="8" rx="2"/>
-              <rect x="2" y="14" width="20" height="8" rx="2"/>
-              <circle cx="6" cy="6" r="1"/><circle cx="6" cy="18" r="1"/>
-            </svg>
-          </div>
-          <h2>Managed Hosting</h2>
-          <p>Server, Datenbanken & Webdesign — vollständig betreut</p>
-          <span class="split-arrow">&rarr;</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CYBERSECURITY -->
-  <section id="security" class="section">
-    <div class="container">
-      <div class="section-label">Cybersecurity</div>
-      <h2 class="section-title">Ihre Systeme.<br>Unsere Prüfung.</h2>
-      <p class="section-sub">Wir finden Schwachstellen, bevor es andere tun. Systematisch, dokumentiert und nach anerkannten Standards.</p>
-      
-      <div class="services-grid">
-        <div class="service-card glass">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-          </div>
-          <h3>Security Audits</h3>
-          <p>Umfassende Prüfung Ihrer IT-Infrastruktur, Netzwerke und Anwendungen. Dokumentierter Bericht mit priorisierten Handlungsempfehlungen.</p>
-        </div>
-        <div class="service-card glass">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-            </svg>
-          </div>
-          <h3>Penetration Testing</h3>
-          <p>Gezielte Angriffssimulation auf Ihre Systeme. Wir denken wie Angreifer und handeln in Ihrem Auftrag — kontrolliert und abgestimmt.</p>
-        </div>
-        <div class="service-card glass">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
-              <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
-            </svg>
-          </div>
-          <h3>Incident Response</h3>
-          <p>Ihr Unternehmen wurde angegriffen? Wir helfen bei der Eindämmung, Analyse und Wiederherstellung — schnell und diskret.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MANAGED HOSTING -->
-  <section id="hosting" class="section section-alt">
-    <div class="container">
-      <div class="section-label">Managed Hosting</div>
-      <h2 class="section-title">Ihre Infrastruktur.<br>Unser Betrieb.</h2>
-      <p class="section-sub">Server, Datenbanken und Webanwendungen — professionell gehostet, gewartet und geschützt.</p>
-      
-      <div class="services-grid">
-        <div class="service-card glass">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/>
-              <line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
-            </svg>
-          </div>
-          <h3>Server & Datenbanken</h3>
-          <p>Dedizierte und virtuelle Server, Datenbank-Cluster, Backup-Strategien — alles aus einer Hand, auf deutschen oder europäischen Rechenzentren.</p>
-        </div>
-        <div class="service-card glass">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
-            </svg>
-          </div>
-          <h3>Webdesign & Entwicklung</h3>
-          <p>Professionelle Websites und Webanwendungen. Von der Landing Page bis zur komplexen Business-Anwendung — performant und sicher.</p>
-        </div>
-        <div class="service-card glass">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            </svg>
-          </div>
-          <h3>Monitoring & Support</h3>
-          <p>24/7 Systemüberwachung, proaktive Wartung und schnelle Reaktion bei Problemen. Ihre Systeme laufen — wir kümmern uns.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY US -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Warum PurpleTec?</h2>
-      <div class="why-grid">
-        <div class="why-item">
-          <div class="why-number">01</div>
-          <h3>Unabhängig</h3>
-          <p>Keine Bindung an Hersteller oder Plattformen. Wir beraten objektiv und handeln in Ihrem Interesse.</p>
-        </div>
-        <div class="why-item">
-          <div class="why-number">02</div>
-          <h3>Diskret</h3>
-          <p>Sicherheitslücken erfordern Vertrauen. Alle Ergebnisse bleiben vertraulich — garantiert.</p>
-        </div>
-        <div class="why-item">
-          <div class="why-number">03</div>
-          <h3>Hands-on</h3>
-          <p>Keine PowerPoint-Berater. Wir arbeiten direkt an Ihren Systemen und liefern konkrete Ergebnisse.</p>
-        </div>
-        <div class="why-item">
-          <div class="why-number">04</div>
-          <h3>DSGVO-konform</h3>
-          <p>Hosting in Europa. Datenschutz ist bei uns kein Zusatzfeature, sondern Grundlage.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="section section-alt">
-    <div class="container">
-      <div class="section-label">Über uns</div>
-      <h2 class="section-title">IT-Sicherheit ist kein Produkt.<br>Es ist eine Haltung.</h2>
-      <p class="section-sub" style="max-width:640px">PurpleTec ist ein IT-Sicherheits- und Hosting-Unternehmen mit Sitz in Deutschland. Wir verbinden offensive Security-Expertise mit zuverlässigem Infrastruktur-Betrieb — für Unternehmen, die beides brauchen.</p>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="section-label">Kontakt</div>
-      <h2 class="section-title">Lassen Sie uns sprechen.</h2>
-      <p class="section-sub">Schreiben Sie uns — wir melden uns innerhalb von 24 Stunden.</p>
-      <div class="contact-box glass">
-        <form id="contactForm" onsubmit="handleSubmit(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required placeholder="Ihr Name">
-            </div>
-            <div class="form-group">
-              <label for="email">E-Mail</label>
-              <input type="email" id="email" name="email" required placeholder="ihre@firma.de">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="interest">Interesse an</label>
-            <select id="interest" name="interest">
-              <option value="security">Cybersecurity</option>
-              <option value="hosting">Managed Hosting</option>
-              <option value="both">Beides</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Nachricht</label>
-            <textarea id="message" name="message" rows="4" required placeholder="Beschreiben Sie kurz Ihr Anliegen..."></textarea>
-          </div>
-          <button type="submit" class="btn-primary">Nachricht senden</button>
-        </form>
-        <div id="formSuccess" class="form-success" style="display:none">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          <h3>Nachricht gesendet!</h3>
-          <p>Wir melden uns zeitnah bei Ihnen.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <img src="/assets/purpletec-logo.jpg" alt="PurpleTec" height="24" style="filter: brightness(0) invert(1); opacity: 0.7;">
-        <p>&copy; 2026 PurpleTec. Alle Rechte vorbehalten.</p>
-      </div>
-      <div class="footer-links">
-        <a href="#security">Cybersecurity</a>
-        <a href="#hosting">Hosting</a>
-        <a href="#contact">Kontakt</a>
-        <a href="/impressum.html">Impressum</a>
-        <a href="/datenschutz.html">Datenschutz</a>
-      </div>
+    <p>&copy; 2026 PurpleTec</p>
+    <div class="footer-links">
+      <a href="/impressum">Impressum</a>
+      <a href="/datenschutz">Datenschutz</a>
     </div>
   </footer>
 
-  <script>
-    // Mobile menu
-    var burger = document.getElementById('burger');
-    var menu = document.getElementById('mobileMenu');
-    burger.addEventListener('click', function() {
-      burger.classList.toggle('active');
-      menu.classList.toggle('open');
-    });
-    function closeMenu() {
-      burger.classList.remove('active');
-      menu.classList.remove('open');
-    }
-
-    // Nav scroll effect
-    var nav = document.getElementById('nav');
-    window.addEventListener('scroll', function() {
-      nav.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-      a.addEventListener('click', function(e) {
-        e.preventDefault();
-        var target = document.querySelector(this.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
-
-    // Contact form
-    function handleSubmit(e) {
-      e.preventDefault();
-      // TODO: Connect to backend/email
-      document.getElementById('contactForm').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'flex';
-    }
-
-    // Intersection Observer for animations
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.service-card, .why-item, .contact-box').forEach(function(el) {
-      observer.observe(el);
-    });
-  </script>
 </body>
 </html>

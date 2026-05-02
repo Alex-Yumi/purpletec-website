@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Managed Hosting — PurpleTec</title>
+  <meta name="description" content="Managed Hosting: Server, Datenbanken, Webdesign und 24/7 Monitoring. DSGVO-konform auf europäischen Rechenzentren.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #fafafa; --text: #111; --muted: #666; --subtle: #999;
+      --border: #e5e5e5; --purple: #7c3aed; --purple-soft: #f3f0ff;
+      --card-bg: #fff; --radius: 12px;
+    }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    nav { padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 960px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo img { height: 28px; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links .active { color: var(--text); font-weight: 500; }
+    .nav-contact { color: var(--purple) !important; font-weight: 500; }
+
+    .page { max-width: 640px; margin: 0 auto; padding: 64px 24px 80px; }
+    .back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--subtle); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+    .back:hover { color: var(--text); }
+    .page-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--purple); margin-bottom: 12px; }
+    .page h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .page .intro { font-size: 16px; color: var(--muted); margin-bottom: 48px; font-weight: 300; line-height: 1.7; }
+
+    .service { margin-bottom: 48px; }
+    .service h2 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+    .service p { font-size: 14px; color: var(--muted); line-height: 1.8; }
+
+    .divider { width: 32px; height: 1px; background: var(--border); margin-bottom: 48px; }
+
+    .cta-box {
+      margin-top: 64px;
+      padding: 32px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .cta-box h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+    .cta-box p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+    .cta-box a {
+      display: inline-flex;
+      padding: 10px 24px;
+      background: var(--purple);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+    .cta-box a:hover { opacity: 0.9; }
+
+    footer { max-width: 960px; margin: 0 auto; padding: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; }
+    footer p { font-size: 12px; color: var(--subtle); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 12px; color: var(--subtle); text-decoration: none; }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .page { padding: 40px 24px 60px; }
+      .page h1 { font-size: 22px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><img src="/assets/purpletec-logo.jpg" alt="PurpleTec"></a>
+      <div class="nav-links">
+        <a href="/security">Security</a>
+        <a href="/hosting" class="active">Hosting</a>
+        <a href="/#contact" class="nav-contact">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page">
+    <a href="/" class="back"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Zurück</a>
+
+    <div class="page-label">Managed Hosting</div>
+    <h1>Ihre Infrastruktur. Unser Betrieb.</h1>
+    <p class="intro">Server, Datenbanken und Webanwendungen, professionell gehostet und betreut. Auf europäischen Rechenzentren, DSGVO-konform und rund um die Uhr überwacht.</p>
+
+    <div class="service">
+      <h2>Server & Datenbanken</h2>
+      <p>Dedizierte und virtuelle Server, Datenbank-Cluster und Backup-Strategien. Wir richten ein, härten ab und betreiben. Auf Hetzner, netcup oder dem Anbieter Ihrer Wahl. Alles in Europa.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="service">
+      <h2>Webdesign & Entwicklung</h2>
+      <p>Von der Unternehmenswebsite bis zur komplexen Webanwendung. Schnell, sicher und auf den Punkt. Keine Templates von der Stange, sondern individuell für Ihr Unternehmen.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="service">
+      <h2>Monitoring & Support</h2>
+      <p>Rund-um-die-Uhr Systemüberwachung mit automatischer Alarmierung. Proaktive Wartung, Security-Patches und schnelle Reaktion bei Problemen. Sie schlafen ruhig, wir passen auf.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="service">
+      <h2>DSGVO-konformes Hosting</h2>
+      <p>Alle Daten bleiben in Europa. Keine US-Cloud, kein Datentransfer in Drittländer. Datenschutz ist bei uns Grundlage, kein Zusatzpaket.</p>
+    </div>
+
+    <div class="cta-box" id="contact">
+      <h3>Projekt besprechen?</h3>
+      <p>Erzählen Sie uns, was Sie brauchen. Wir machen Ihnen ein Angebot.</p>
+      <a href="mailto:info@purpletec.de">info@purpletec.de</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 PurpleTec</p>
+    <div class="footer-links">
+      <a href="/impressum">Impressum</a>
+      <a href="/datenschutz">Datenschutz</a>
+    </div>
+  </footer>
+
+</body>
+</html>
